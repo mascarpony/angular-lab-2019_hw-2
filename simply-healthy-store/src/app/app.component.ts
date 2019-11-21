@@ -19,7 +19,6 @@ export class AppComponent {
 
   ngOnInit() {
     this.getProducts();
-    console.log(this.products);
   }
 
   getProducts(): void {
