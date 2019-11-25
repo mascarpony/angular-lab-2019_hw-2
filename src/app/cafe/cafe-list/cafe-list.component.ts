@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, Input } from "@angular/core";
+import { Component, Output, EventEmitter, Input, OnInit } from "@angular/core";
 import { Increment } from "../../interfaces/incrementPayload";
 import { Legend } from "src/app/interfaces/legend";
 
@@ -8,13 +8,15 @@ import { Legend } from "src/app/interfaces/legend";
   styleUrls: ["./cafe-list.component.scss"]
 })
 export class CafeListComponent implements OnInit {
-  @Input() cards: Legend[];
+  @Input() legends: Legend[];
   @Output() change: EventEmitter<Increment> = new EventEmitter<Increment>();
-
-  ngOnInit() {}
 
   onChange(event: Increment): void {
     console.log(event);
     this.change.emit(event);
+  }
+  ngOnInit() {
+    console.log(this.legends);
+    console.log("loaded");
   }
 }

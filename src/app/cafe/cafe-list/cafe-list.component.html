@@ -1,6 +1,9 @@
-<mat-nav-list class="product-list" *ngIf="cards.length !== 0; then thenBlock">
+<mat-nav-list
+  class="product-list"
+  *ngIf="legends?.length !== 0; then thenBlock"
+>
   <app-cafe-item
-    *ngFor="let card of cards"
+    *ngFor="let card of legends"
     [card]="card"
     (change)="onChange($event)"
   ></app-cafe-item>
