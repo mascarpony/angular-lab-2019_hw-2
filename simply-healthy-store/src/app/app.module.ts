@@ -12,6 +12,8 @@ import { MatCardModule } from '@angular/material/card';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CommonModule } from '@angular/common';
+import { NgmaterialModule } from './ngmaterial.module';
+import { HighlightCardBorderDirective } from './directives/highlight-card-border.directive';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { CommonModule } from '@angular/common';
     ProductCardComponent,
     ProductListComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    HighlightCardBorderDirective
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,8 @@ import { CommonModule } from '@angular/common';
     BrowserAnimationsModule,
     MatSliderModule,
     MatMenuModule,
-    MatCardModule
+    MatCardModule,
+    NgmaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

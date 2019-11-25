@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { HighlightCardBorderDirective } from './../../directives/highlight-card-border.directive';
 
 @Component({
   selector: 'app-product-card',

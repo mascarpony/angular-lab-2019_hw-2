@@ -1,4 +1,4 @@
-<mat-card class="product-card">
+<mat-card class="product-card" appHighlightCardBorder>
   <mat-card-header>
     <mat-card-title>{{product.name}}</mat-card-title>
   </mat-card-header>
@@ -7,12 +7,14 @@
       Price: {{product.price}}
     </p>
     <p>
-      Number of products you need: {{productCount}}
+      Available quantity of product: {{product.available_quantity}}
     </p>
   </mat-card-content>
   <mat-card-actions>
     <button mat-button [disabled]="!productCount" (click)='substractProducts()'>-</button>
+    <span>{{productCount}}</span>
     <button mat-button [disabled]="isAddButtonDisabled" (click)='addProducts()'>+</button>
+    <button mat-button>Add to Cart</button>
   </mat-card-actions>
 </mat-card>
 
