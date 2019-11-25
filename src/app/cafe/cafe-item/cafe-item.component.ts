@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 import { Increment } from "../../interfaces/incrementPayload";
 import { Actions } from "../../interfaces/actions";
+import { Legend } from "src/app/interfaces/legend";
 
 @Component({
   selector: "app-cafe-item",
@@ -8,7 +9,7 @@ import { Actions } from "../../interfaces/actions";
   styleUrls: ["./cafe-item.component.scss"]
 })
 export class CafeItemComponent implements OnInit {
-  @Input() card: any;
+  @Input() card: Legend;
   @Output()
   change: EventEmitter<Increment> = new EventEmitter<Increment>();
 

@@ -1,6 +1,6 @@
 <mat-nav-list class="product-list" *ngIf="cards.length !== 0; then thenBlock">
   <app-cafe-item
-    *ngFor="let card of cards | async"
+    *ngFor="let card of cards"
     [card]="card"
     (change)="onChange($event)"
   ></app-cafe-item>

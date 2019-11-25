@@ -1,39 +1,20 @@
-import {
-  Component,
-  OnInit,
-  Output,
-  EventEmitter,
-  OnDestroy
-} from "@angular/core";
+import { Component, OnInit, Output, EventEmitter, Input } from "@angular/core";
 import { Increment } from "../../interfaces/incrementPayload";
-import { Subscription } from "rxjs";
-import { CommunicatorService } from "../services/communicator.service";
-import { Champion } from "src/app/interfaces/champions";
+import { Legend } from "src/app/interfaces/legend";
 
 @Component({
   selector: "app-cafe-list",
   templateUrl: "./cafe-list.component.html",
   styleUrls: ["./cafe-list.component.scss"]
 })
-export class CafeListComponent implements OnInit, OnDestroy {
-  public cards: Champion[];
-  private sub: Subscription;
+export class CafeListComponent implements OnInit {
+  @Input() cards: Legend[];
   @Output() change: EventEmitter<Increment> = new EventEmitter<Increment>();
 
-  constructor(private legendCommunicatorService: CommunicatorService) {}
-
-  ngOnInit() {
-    this.sub = this.legendCommunicatorService.legends$.subscribe(
-      (data: Champion[]) => (this.cards = data)
-    );
-  }
+  ngOnInit() {}
 
   onChange(event: Increment): void {
     console.log(event);
     this.change.emit(event);
-  }
-
-  ngOnDestroy() {
-    this.sub.unsubscribe();
   }
 }

@@ -1,30 +1,23 @@
-import { Component, OnInit, AfterViewInit } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { ConfigService } from "../../services/config/config.service";
 import { Champion } from "../../interfaces/champions";
 import { Increment } from "../../interfaces/incrementPayload";
-import { CommunicatorService } from "../services/communicator.service";
+import { Legend } from "src/app/interfaces/legend";
 
 @Component({
   selector: "app-cafe-container",
   templateUrl: "./cafe-container.component.html",
   styleUrls: ["./cafe-container.component.scss"]
 })
-export class CafeContainerComponent implements OnInit, AfterViewInit {
-  public products: Champion[] = [];
+export class CafeContainerComponent implements OnInit {
+  public products: Legend[] = [];
   public cardCounter: string;
   public totalPrice: number = 0;
 
-  constructor(
-    private configService: ConfigService,
-    private legendCommunicatorService: CommunicatorService
-  ) {}
+  constructor(private configService: ConfigService) {}
 
   ngOnInit() {
     this.showConfig();
-  }
-
-  ngAfterViewInit() {
-    this.legendCommunicatorService.publishLegends(this.products);
   }
 
   showConfig() {
