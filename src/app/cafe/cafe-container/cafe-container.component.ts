@@ -4,7 +4,7 @@ import { Champion } from "../../interfaces/champions";
 import { Increment } from "../../interfaces/incrementPayload";
 import { Legend } from "src/app/interfaces/legend";
 import { Observable } from "rxjs";
-import { mergeMap } from "rxjs/operators";
+import { mergeMap, tap, map } from "rxjs/operators";
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -15,10 +15,10 @@ import { mergeMap } from "rxjs/operators";
 export class CafeContainerComponent {
   legends$: Observable<Legend[]> = this.configService
     .getConfig()
-    .pipe(mergeMap((data: Champion) => [...Object.values(data.data)]));
+    .pipe(map((data: Champion) => [...Object.values(data.data)]));
 
   public cardCounter: string;
-  public totalPrice: number = 0;
+  public totalPrice = 0;
 
   constructor(private configService: ConfigService) {}
 

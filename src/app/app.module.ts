@@ -8,11 +8,9 @@ import { NavigationComponent } from "./navigation/navigation.component";
 import { FooterComponent } from "./footer/footer.component";
 
 import { HttpClientModule } from "@angular/common/http";
-import { MaterialElevationDirective } from "./diractives/material-elevation/material-elevation.directive";
 
 import { CafeModule } from "./cafe/cafe.module";
 import { AppMaterialModule } from "./app-material/app-material.module";
-import { CommunicatorService } from "./cafe/services/communicator.service";
 import { ConfigService } from "./services/config/config.service";
 
 @NgModule({
@@ -20,7 +18,6 @@ import { ConfigService } from "./services/config/config.service";
     AppComponent,
     NavigationComponent,
     FooterComponent,
-    MaterialElevationDirective
   ],
   imports: [
     BrowserModule,
@@ -30,7 +27,7 @@ import { ConfigService } from "./services/config/config.service";
     CafeModule,
     AppMaterialModule
   ],
-  providers: [CommunicatorService, ConfigService],
+  providers: [ConfigService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

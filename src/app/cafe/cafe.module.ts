@@ -6,7 +6,6 @@ import { CafeListComponent } from "./cafe-list/cafe-list.component";
 import { CafeItemComponent } from "./cafe-item/cafe-item.component";
 import { CafeContainerComponent } from "./cafe-container/cafe-container.component";
 
-import { ConfigService } from "../services/config/config.service";
 import { AppMaterialModule } from "../app-material/app-material.module";
 
 @NgModule({
@@ -17,7 +16,7 @@ import { AppMaterialModule } from "../app-material/app-material.module";
     CafeCartComponent
   ],
   exports: [CafeContainerComponent],
-  providers: [ConfigService],
+  providers: [],
   imports: [CommonModule, AppMaterialModule]
 })
 export class CafeModule {}

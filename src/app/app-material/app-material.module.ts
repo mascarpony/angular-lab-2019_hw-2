@@ -7,9 +7,10 @@ import {
   MatListModule,
   MatBadgeModule
 } from "@angular/material";
+import { MaterialElevationDirective } from '../diractives/material-elevation/material-elevation.directive';
 
 @NgModule({
-  declarations: [],
+  declarations: [MaterialElevationDirective],
   imports: [
     CommonModule,
     MatButtonModule,
