@@ -12,7 +12,6 @@ export class CafeListComponent implements OnInit {
   @Output() changeNotifyParent: EventEmitter<Increment> = new EventEmitter<Increment>();
 
   onChange(event: Increment): void {
-    console.log(event);
     this.changeNotifyParent.emit(event);
   }
   ngOnInit() {

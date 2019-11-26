@@ -19,10 +19,18 @@ export class CafeContainerComponent {
 
   public cardCounter: string;
   public totalPrice = 0;
+  public cartLegends = new Map();
 
   constructor(private configService: ConfigService) {}
 
   changePrice(event: Increment) {
+    this.cartLegends.set(event.id, event);
+    if (event.count === 0) {
+      this.cartLegends.delete(event.id);
+    }
+    console.log(this.cartLegends);
+
+    //Temp total price to watch for what we have
     event.action === "increment"
       ? (this.totalPrice += event.price)
       : (this.totalPrice -= event.price);

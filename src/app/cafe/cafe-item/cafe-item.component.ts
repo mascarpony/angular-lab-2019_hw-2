@@ -48,8 +48,12 @@ export class CafeItemComponent implements OnInit {
 
   private preparePayload(action: string): Increment {
     return {
-      action,
-      price: this.price
+      price: this.price,
+      count: this.counter,
+      id: this.card.id,
+      title: this.card.title,
+      name: this.card.name,
+      action
     };
   }
 }
