@@ -1,3 +1,7 @@
-<div>{{ totalPrice }}</div>
-<app-cafe-list [legends]="legends$ | async"><p>Loading Content...</p></app-cafe-list>
-<app-cafe-cart></app-cafe-cart>
+<div>{{ totalPrice | currency }}</div>
+<app-cafe-list
+  [legends]="legends$ | async"
+  (changeNotifyParent)="changePrice($event)"
+  ><p>Loading Content...</p></app-cafe-list
+>
+<app-cafe-cart>Loading Contents...</app-cafe-cart>

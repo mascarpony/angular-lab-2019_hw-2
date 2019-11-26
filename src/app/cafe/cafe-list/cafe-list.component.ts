@@ -9,14 +9,13 @@ import { Legend } from "src/app/interfaces/legend";
 })
 export class CafeListComponent implements OnInit {
   @Input() legends: Legend[];
-  @Output() changeNotify: EventEmitter<Increment> = new EventEmitter<Increment>();
+  @Output() changeNotifyParent: EventEmitter<Increment> = new EventEmitter<Increment>();
 
   onChange(event: Increment): void {
     console.log(event);
-    this.changeNotify.emit(event);
+    this.changeNotifyParent.emit(event);
   }
   ngOnInit() {
-    console.log(this.legends);
   }
 
 }

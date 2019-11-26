@@ -4,7 +4,7 @@ import { Champion } from "../../interfaces/champions";
 import { Increment } from "../../interfaces/incrementPayload";
 import { Legend } from "src/app/interfaces/legend";
 import { Observable } from "rxjs";
-import { mergeMap, tap, map } from "rxjs/operators";
+import { map } from "rxjs/operators";
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -11,11 +11,11 @@ import { Legend } from "src/app/interfaces/legend";
 export class CafeItemComponent implements OnInit {
   @Input() card: Legend;
   @Output()
-  change: EventEmitter<Increment> = new EventEmitter<Increment>();
+  changeNotify: EventEmitter<Increment> = new EventEmitter<Increment>();
 
   public imgUrl: string;
   public imgStyle;
-  public counter: number = 0;
+  public counter = 0;
   public price: number = Math.floor(1 + Math.random() * 10);
   public totalPrice: number = this.counter * this.price;
 
@@ -35,18 +35,20 @@ export class CafeItemComponent implements OnInit {
 
   increment(): void {
     this.counter += 1;
-    this.change.emit(this.preparePayload(Actions.Increment));
+    this.changeNotify.emit(this.preparePayload(Actions.Increment));
   }
 
   decrement(): void {
-    if (this.counter === 0) return;
+    if (this.counter === 0) {
+      return;
+    }
     this.counter -= 1;
-    this.change.emit(this.preparePayload(Actions.Decrement));
+    this.changeNotify.emit(this.preparePayload(Actions.Decrement));
   }
 
   private preparePayload(action: string): Increment {
     return {
-      action: action,
+      action,
       price: this.price
     };
   }
