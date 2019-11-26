@@ -7,6 +7,7 @@ import { CafeItemComponent } from "./cafe-item/cafe-item.component";
 import { CafeContainerComponent } from "./cafe-container/cafe-container.component";
 
 import { AppMaterialModule } from "../app-material/app-material.module";
+import { MatTableModule } from '@angular/material';
 
 @NgModule({
   declarations: [

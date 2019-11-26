@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Legend } from 'src/app/interfaces/legend';
 
 @Component({
   selector: 'app-cafe-cart',
@@ -7,7 +6,7 @@ import { Legend } from 'src/app/interfaces/legend';
   styleUrls: ['./cafe-cart.component.scss']
 })
 export class CafeCartComponent implements OnInit {
-  @Input() pickedLegends: Legend[];
+  @Input() pickedLegends: [];
 
   constructor() { }
 

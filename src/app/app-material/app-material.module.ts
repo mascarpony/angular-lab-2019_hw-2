@@ -5,7 +5,8 @@ import {
   MatIconModule,
   MatCardModule,
   MatListModule,
-  MatBadgeModule
+  MatBadgeModule,
+  MatTableModule
 } from "@angular/material";
 import { MaterialElevationDirective } from '../diractives/material-elevation/material-elevation.directive';
 
@@ -17,14 +18,16 @@ import { MaterialElevationDirective } from '../diractives/material-elevation/mat
     MatIconModule,
     MatCardModule,
     MatListModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatTableModule,
   ],
   exports: [
     MatButtonModule,
     MatIconModule,
     MatCardModule,
     MatListModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatTableModule
   ]
 })
 export class AppMaterialModule {}
