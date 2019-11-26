@@ -1,0 +1,26 @@
+  <mat-table
+    class="lessons-table mat-elevation-z8"
+    [dataSource]="pickedLegends"
+  >
+    <ng-container matColumnDef="seqNo">
+      <div *matHeaderCellDef>#</div>
+      <div *matCellDef="let legend">{{ legend.name }}</div>
+    </ng-container>
+
+    <ng-container matColumnDef="description">
+      <div *matHeaderCellDef>Description</div>
+      <div class="description-cell" *matCellDef="let legend">
+        {{ legend.count }}
+      </div>
+    </ng-container>
+
+    <!-- <ng-container matColumnDef="duration">
+        <div *matHeaderCellDef>Duration</div>
+        <div class="duration-cell"
+                  *matCellDef="let legend">{{legend.duration}}</div>
+    </ng-container> -->
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </mat-table>
