@@ -1,5 +1,9 @@
 <div>
   <app-header></app-header>
-  <app-product-list [products]="products"></app-product-list>
+  <app-product-list 
+        [products]="products"
+        [cartProducts]="cartProducts"
+        (pushProduct)="pushProduct($event)">
+  </app-product-list>
   <app-footer></app-footer>
 </div>

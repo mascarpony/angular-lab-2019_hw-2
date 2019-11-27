@@ -13,15 +13,27 @@ import { Product } from './mock-products';
 export class AppComponent {
 
   public products: Array<Product>;
+  public cartProducts: Array<Product>;
   title = 'simply-healthy-store';
 
   constructor(private productService: ProductsService) {}
 
   ngOnInit() {
     this.getProducts();
+    this.getCartProducts();
   }
 
   getProducts(): void {
     this.products = this.productService.getProducts();
+  }
+  
+  getCartProducts(): void {
+    this.cartProducts = this.productService.getCartProducts();
+  }
+
+  pushProduct(product): void {
+    console.log(product);
+    this.productService.pushProductToCart(product);
+    this.getCartProducts();
   }
 }

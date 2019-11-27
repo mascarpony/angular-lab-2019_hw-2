@@ -1,3 +1,18 @@
-<div>
-  <app-product-card *ngFor="let product of products" [product]="product"></app-product-card>
+<h2>Products</h2>
+<div *ngIf="products.length; else noProducts">
+  <app-product-card 
+        *ngFor="let product of products"
+        [product]="product"
+        (pushProduct)="onPushProduct($event)">
+  </app-product-card>
 </div>
+<h2>Cart</h2>
+<div *ngIf="cartProducts.length; else noProductsInCart">
+  <app-product-card 
+        *ngFor="let product of cartProducts" 
+        [product]="product">
+  </app-product-card>
+</div>
+
+<ng-template #noProducts>There are NO products in our store yet...</ng-template>
+<ng-template #noProductsInCart>There are NO products in your cart yet...</ng-template>
