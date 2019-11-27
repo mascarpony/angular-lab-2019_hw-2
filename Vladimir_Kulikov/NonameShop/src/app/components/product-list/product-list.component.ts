@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ProductService } from '../../product.service';
+import { ProductService } from '../../services/product.service';
 
-import { Iproduct } from '../../interfaces/IProduct';
+import { IProduct } from '../../interfaces/IProduct';
 
 @Component({
   selector: 'app-product-list',
@@ -9,7 +9,7 @@ import { Iproduct } from '../../interfaces/IProduct';
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit {
-  private products: Iproduct[];
+  private products: IProduct[];
 
   constructor(private productService: ProductService) { }
 
