@@ -12,12 +12,14 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
+import { ProductCardDirective } from './directives/product-card.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductCardComponent,
     ProductListComponent,
+    ProductCardDirective,
   ],
   imports: [
     BrowserModule,

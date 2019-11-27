@@ -1,4 +1,4 @@
-<mat-card class="product-card">
+<mat-card appProductCard class="product-card">
   <mat-card-header>
     <mat-card-title>{{ product.name }}</mat-card-title>
   </mat-card-header>
@@ -6,8 +6,8 @@
   <mat-card-content>{{ product.price }} USD</mat-card-content>
   <mat-card-actions>
     <button mat-raised-button color="primary">Primary</button>
-    <button mat-icon-button aria-label="Example icon-button with a heart icon">-</button>
-    <span>5</span>
-    <button mat-icon-button aria-label="Example icon-button with a heart icon">+</button>
+    <button (click)="onMinusOne()" mat-icon-button aria-label="Example icon-button with a heart icon">-</button>
+    <span>{{ quantity }}</span>
+    <button (click)="onPlusOne()" mat-icon-button aria-label="Example icon-button with a heart icon">+</button>
   </mat-card-actions>
 </mat-card>
