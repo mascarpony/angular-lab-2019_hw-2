@@ -8,7 +8,8 @@ import { IProduct } from '../../interfaces/IProduct';
 })
 export class ProductCardComponent implements OnInit {
   private quantity: number = 0;
-  
+  private disabled: boolean = true;
+
   @Input() product: IProduct;
 
   constructor() { }
@@ -16,13 +17,20 @@ export class ProductCardComponent implements OnInit {
   ngOnInit() {
   }
 
-  onMinusOne() {
-    if (this.quantity > 0) {
+  onChangeQuantity(sign: '+' | '-') {
+    if (sign === '+') {
+      this.quantity += 1;
+      this.switchDisabled(this.quantity);
+      return;
+    }
+
+    if (this.quantity >= 1) {
       this.quantity -= 1;
+      this.switchDisabled(this.quantity);
     }
   }
 
-  onPlusOne() {
-    this.quantity += 1;
+  switchDisabled(quantity: number) {
+    this.disabled = this.quantity > 0 ? false : true;
   }
 }
