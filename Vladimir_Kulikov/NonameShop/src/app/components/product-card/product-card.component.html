@@ -6,7 +6,7 @@
   <mat-card-content>{{ product.price }} USD</mat-card-content>
   <mat-card-actions>
     <button mat-raised-button color="primary">Primary</button>
-    <button [disabled]="disabled" (click)="onChangeQuantity('-')" mat-icon-button aria-label="Example icon-button with a heart icon">-</button>
+    <button [disabled]="isQtyDecreaseDisabled" (click)="onChangeQuantity('-')" mat-icon-button aria-label="Example icon-button with a heart icon">-</button>
     <span>{{ quantity }}</span>
     <button (click)="onChangeQuantity('+')" mat-icon-button aria-label="Example icon-button with a heart icon">+</button>
   </mat-card-actions>

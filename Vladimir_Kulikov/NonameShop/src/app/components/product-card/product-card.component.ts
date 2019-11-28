@@ -8,7 +8,7 @@ import { IProduct } from '../../interfaces/IProduct';
 })
 export class ProductCardComponent implements OnInit {
   private quantity: number = 0;
-  private disabled: boolean = true;
+  private isQtyDecreaseDisabled: boolean = true;
 
   @Input() product: IProduct;
 
@@ -17,20 +17,20 @@ export class ProductCardComponent implements OnInit {
   ngOnInit() {
   }
 
-  onChangeQuantity(sign: '+' | '-') {
-    if (sign === '+') {
+  onChangeQuantity(operator: '+' | '-') {
+    if (operator === '+') {
       this.quantity += 1;
-      this.switchDisabled(this.quantity);
+      this.switchQtyDecreaseDisabled(this.quantity);
       return;
     }
 
     if (this.quantity >= 1) {
       this.quantity -= 1;
-      this.switchDisabled(this.quantity);
+      this.switchQtyDecreaseDisabled(this.quantity);
     }
   }
 
-  switchDisabled(quantity: number) {
-    this.disabled = this.quantity > 0 ? false : true;
+  switchQtyDecreaseDisabled(quantity: number) {
+    this.isQtyDecreaseDisabled = this.quantity > 0 ? false : true;
   }
 }
