@@ -1,4 +1,32 @@
 .product-card {
-  max-width: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 500px;
   border: 2px solid #E8F5E9;
+  margin: 10px;
+  color: #3E2723;
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__price {
+    background-color: #1B5E20;
+    color: #EFEBE9;
+    padding: 10px;
+    border-radius: 5px;
+  }
+}
+
+img {
+  width: 200px;
+  margin-left: 10px;
 }
