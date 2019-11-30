@@ -1,9 +1,3 @@
-<div>
-  <app-header></app-header>
-  <app-product-list 
-        [products]="products"
-        [cartProducts]="cartProducts"
-        (pushProduct)="pushProduct($event)">
-  </app-product-list>
-  <app-footer></app-footer>
-</div>
+<app-header></app-header>
+<router-outlet></router-outlet>
+<app-footer></app-footer>

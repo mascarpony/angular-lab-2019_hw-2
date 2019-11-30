@@ -1,4 +1,9 @@
-<header>
-  <button mat-button>Menu</button>
-  <button mat-button>Cart</button>
+<header class="header navbar mb-4">
+  <div class="header__title">
+    Simply Healthy Store
+  </div>
+  <div>
+    <button mat-button [routerLink]="['/products']">Products</button>
+    <button mat-button [routerLink]="['/cart']">Cart</button>
+  </div>
 </header>

@@ -1,8 +1,4 @@
 import { Component } from '@angular/core';
-import 'hammerjs';
-
-import { ProductsService } from './products.service';
-import { Product } from './mock-products';
 
 @Component({
   selector: 'app-root',
@@ -12,28 +8,8 @@ import { Product } from './mock-products';
 
 export class AppComponent {
 
-  public products: Array<Product>;
-  public cartProducts: Array<Product>;
-  title = 'simply-healthy-store';
-
-  constructor(private productService: ProductsService) {}
+  constructor() {}
 
   ngOnInit() {
-    this.getProducts();
-    this.getCartProducts();
-  }
-
-  getProducts(): void {
-    this.products = this.productService.getProducts();
-  }
-  
-  getCartProducts(): void {
-    this.cartProducts = this.productService.getCartProducts();
-  }
-
-  pushProduct(product): void {
-    console.log(product);
-    this.productService.pushProductToCart(product);
-    this.getCartProducts();
   }
 }

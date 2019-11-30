@@ -13,6 +13,7 @@ export class ProductCardComponent implements OnInit {
   private isAddToCartButtonDisabled: boolean = false;
 
   @Input() product;
+  @Input() pageURL;
   @Output() pushProduct = new EventEmitter();
 
   constructor() { }

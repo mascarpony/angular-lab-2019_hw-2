@@ -11,6 +11,11 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CommonModule } from '@angular/common';
 import { NgmaterialModule } from './ngmaterial.module';
 import { HighlightCardBorderDirective } from './directives/highlight-card-border.directive';
+import { ProductsPageComponent } from './components/products-page/products-page.component';
+import { CartPageComponent } from './components/cart-page/cart-page.component';
+import { ErrorPageComponent } from './components/error-page/error-page.component';
+import { RouterModule } from '@angular/router';
+import { MainPageComponent } from './components/main-page/main-page.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +24,11 @@ import { HighlightCardBorderDirective } from './directives/highlight-card-border
     ProductListComponent,
     HeaderComponent,
     FooterComponent,
-    HighlightCardBorderDirective
+    HighlightCardBorderDirective,
+    ProductsPageComponent,
+    CartPageComponent,
+    ErrorPageComponent,
+    MainPageComponent
   ],
   imports: [
     BrowserModule,
