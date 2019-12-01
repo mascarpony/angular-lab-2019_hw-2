@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class CartListComponent implements OnInit {
   @Input() products;
 
+  displayedColumns = ['image', 'name', 'price', 'button-substract', 'count', 'button-add', 'total', 'delete'];
   constructor() { }
 
   ngOnInit() {
