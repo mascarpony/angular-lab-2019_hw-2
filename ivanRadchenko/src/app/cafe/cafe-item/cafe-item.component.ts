@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 import { Increment } from "../../interfaces/incrementPayload";
 import { Actions } from "../../interfaces/actions";
 import { Legend } from "src/app/interfaces/legend";
+import { Observable } from "rxjs";
 
 @Component({
   selector: "app-cafe-item",
@@ -9,24 +10,30 @@ import { Legend } from "src/app/interfaces/legend";
   styleUrls: ["./cafe-item.component.scss"]
 })
 export class CafeItemComponent implements OnInit {
-  @Input() card: Legend;
+  @Input() card$: Observable<Legend>;
   @Output()
   changeNotify: EventEmitter<Increment> = new EventEmitter<Increment>();
 
-  public imgUrl: string;
   public imgStyle;
   public counter = 0;
-  public price: number = Math.floor(1 + Math.random() * 10);
-  public totalPrice: number = this.counter * this.price;
+  public price = Math.floor(1 + Math.random() * 10);
+  public id: string;
+  public title: string;
+  public description: string;
+  public imgUrl: string;
+  // public totalPrice: number = this.counter * this.price;
 
   constructor() {}
 
   ngOnInit() {
-    this.getImgUrl();
+    this.card$.subscribe(legend => this.populateLegendInfo(legend));
   }
 
-  getImgUrl() {
-    this.imgUrl = `../../assets/heroes/${this.card.id}_1.jpg`;
+  populateLegendInfo(legend: Legend): void {
+    this.id = legend.id;
+    this.title = legend.title;
+    this.description = legend.blurb;
+    this.imgUrl = legend.imgUrl;
     this.imgStyle = {
       background: "url(" + this.imgUrl + ") no-repeat",
       "background-size": "contain"
@@ -50,9 +57,9 @@ export class CafeItemComponent implements OnInit {
     return {
       price: this.price,
       count: this.counter,
-      id: this.card.id,
-      title: this.card.title,
-      name: this.card.id,
+      id: this.id,
+      title: this.title,
+      name: this.id,
       action
     };
   }

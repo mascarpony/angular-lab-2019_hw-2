@@ -11,7 +11,7 @@ import { ConfigService } from "src/app/services/config/config.service";
 })
 export class CafeListComponent implements OnInit {
   private sub: Subscription;
-  legends$: Observable<Legend[]>;
+  legends$: Observable<Observable<Legend>[]>;
   // legends$: Observable<Legend>;
   @Output() changeNotifyParent: EventEmitter<Increment> = new EventEmitter<
     Increment

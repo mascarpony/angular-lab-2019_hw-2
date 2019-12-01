@@ -1,14 +1,14 @@
 <mat-card appMaterialElevation class="card">
   <mat-card-header class="card-header">
-    <mat-card-title>{{ card.id }}</mat-card-title>
-    <mat-card-subtitle>{{ card.title }}</mat-card-subtitle>
+    <mat-card-title>{{ id }}</mat-card-title>
+    <mat-card-subtitle>{{ title }}</mat-card-subtitle>
     <div class="card-header__price">
       {{ price | currency }}
     </div>
   </mat-card-header>
   <mat-card-content [ngStyle]="imgStyle" class="card-content">
     <p>
-      {{ card.blurb }}
+      {{ description }}
     </p>
   </mat-card-content>
   <mat-card-actions class="card-actions">
