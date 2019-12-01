@@ -1,8 +1,7 @@
-<mat-nav-list class="product-list" *ngIf="legends$ | async; else elseBlock">
+<mat-nav-list class="product-list" *ngIf="legends$ | async">
   <app-cafe-item
     *ngFor="let card of legends$ | async"
     [card]="card"
     (changeNotify)="onChange($event)"
   ></app-cafe-item>
 </mat-nav-list>
-<ng-content #elseBlock class="product-list__projected"></ng-content>
