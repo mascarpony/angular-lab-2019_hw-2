@@ -14,8 +14,7 @@ import { HighlightCardBorderDirective } from './directives/highlight-card-border
 import { ProductsPageComponent } from './components/products-page/products-page.component';
 import { CartPageComponent } from './components/cart-page/cart-page.component';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
-import { RouterModule } from '@angular/router';
-import { MainPageComponent } from './components/main-page/main-page.component';
+import { CartListComponent } from './components/cart-list/cart-list.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +27,7 @@ import { MainPageComponent } from './components/main-page/main-page.component';
     ProductsPageComponent,
     CartPageComponent,
     ErrorPageComponent,
-    MainPageComponent
+    CartListComponent
   ],
   imports: [
     BrowserModule,

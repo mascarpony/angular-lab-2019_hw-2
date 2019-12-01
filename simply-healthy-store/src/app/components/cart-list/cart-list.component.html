@@ -1,0 +1,19 @@
+<div *ngIf="products.length; else noProducts">
+  <table mat-table [dataSource]="products">
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> PRODUCT </th>
+      <td mat-cell *matCellDef="let product"> {{product.name}} </td>
+    </ng-container>
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef> PRICE </th>
+      <td mat-cell *matCellDef="let product"> {{product.price}} </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
+
+<ng-template #noProducts>
+  There are NO products in your cart... <br><br> 
+  Please come back to the <a [routerLink]="['/products']">products page</a> and add something!
+</ng-template>
