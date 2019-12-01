@@ -52,7 +52,7 @@ export class CafeItemComponent implements OnInit {
       count: this.counter,
       id: this.card.id,
       title: this.card.title,
-      name: this.card.name,
+      name: this.card.id,
       action
     };
   }

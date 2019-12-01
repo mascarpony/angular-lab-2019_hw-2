@@ -8,7 +8,7 @@ import {
   MatBadgeModule,
   MatTableModule
 } from "@angular/material";
-import { MaterialElevationDirective } from '../diractives/material-elevation/material-elevation.directive';
+import { MaterialElevationDirective } from "./diractives/material-elevation/material-elevation.directive";
 
 @NgModule({
   declarations: [MaterialElevationDirective],
@@ -19,7 +19,7 @@ import { MaterialElevationDirective } from '../diractives/material-elevation/mat
     MatCardModule,
     MatListModule,
     MatBadgeModule,
-    MatTableModule,
+    MatTableModule
   ],
   exports: [
     MatButtonModule,

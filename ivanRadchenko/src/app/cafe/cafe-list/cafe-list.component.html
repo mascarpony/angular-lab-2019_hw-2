@@ -1,6 +1,6 @@
-<mat-nav-list class="product-list" *ngIf="legends; else elseBlock">
+<mat-nav-list class="product-list" *ngIf="legends$ | async; else elseBlock">
   <app-cafe-item
-    *ngFor="let card of legends"
+    *ngFor="let card of legends$ | async"
     [card]="card"
     (changeNotify)="onChange($event)"
   ></app-cafe-item>

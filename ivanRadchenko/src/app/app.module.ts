@@ -10,15 +10,10 @@ import { FooterComponent } from "./footer/footer.component";
 import { HttpClientModule } from "@angular/common/http";
 
 import { CafeModule } from "./cafe/cafe.module";
-import { AppMaterialModule } from "./app-material/app-material.module";
-import { ConfigService } from "./services/config/config.service";
+import { AppMaterialModule } from "./app-material.module";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavigationComponent,
-    FooterComponent,
-  ],
+  declarations: [AppComponent, NavigationComponent, FooterComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -27,7 +22,6 @@ import { ConfigService } from "./services/config/config.service";
     CafeModule,
     AppMaterialModule
   ],
-  providers: [ConfigService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
