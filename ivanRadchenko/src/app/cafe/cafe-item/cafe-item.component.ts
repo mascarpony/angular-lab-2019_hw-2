@@ -1,8 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
-import { Increment } from "../../interfaces/incrementPayload";
 import { Actions } from "../../interfaces/actions";
 import { Legend } from "src/app/interfaces/legend";
 import { Observable } from "rxjs";
+import { LegendCart } from "src/app/interfaces/legendCart";
 
 @Component({
   selector: "app-cafe-item",
@@ -12,7 +12,7 @@ import { Observable } from "rxjs";
 export class CafeItemComponent implements OnInit {
   @Input() card$: Observable<Legend>;
   @Output()
-  changeNotify: EventEmitter<Increment> = new EventEmitter<Increment>();
+  changeNotify: EventEmitter<LegendCart> = new EventEmitter<LegendCart>();
 
   public imgStyle;
   public counter = 0;
@@ -21,7 +21,6 @@ export class CafeItemComponent implements OnInit {
   public title: string;
   public description: string;
   public imgUrl: string;
-  // public totalPrice: number = this.counter * this.price;
 
   constructor() {}
 
@@ -53,7 +52,7 @@ export class CafeItemComponent implements OnInit {
     this.changeNotify.emit(this.preparePayload(Actions.Decrement));
   }
 
-  private preparePayload(action: string): Increment {
+  private preparePayload(action: string): LegendCart {
     return {
       price: this.price,
       count: this.counter,

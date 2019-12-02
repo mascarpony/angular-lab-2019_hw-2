@@ -1,4 +1,4 @@
-<mat-table class="lessons-table mat-elevation-z8" [dataSource]="pickedLegends">
+<mat-table class="lessons-table mat-elevation-z8" [dataSource]="dataSource">
   <ng-container matColumnDef="seqNo">
     <div *matHeaderCellDef>#</div>
     <div *matCellDef="let legend">{{ legend.name }}</div>
@@ -11,11 +11,10 @@
     </div>
   </ng-container>
 
-  <!-- <ng-container matColumnDef="duration">
-        <div *matHeaderCellDef>Duration</div>
-        <div class="duration-cell"
-                  *matCellDef="let legend">{{legend.duration}}</div>
-    </ng-container> -->
+  <ng-container matColumnDef="count">
+    <div *matHeaderCellDef>Count</div>
+    <div class="duration-cell" *matCellDef="let legend">{{ legend.count }}</div>
+  </ng-container>
 
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
 
