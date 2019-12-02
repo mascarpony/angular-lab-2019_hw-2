@@ -11,7 +11,7 @@ import { ConfigService } from "src/app/services/config/config.service";
 export class CafeCartComponent implements OnInit {
   private sub: Subscription;
   dataSource = [];
-  displayedColumns = ["seqNo", "description", "count"];
+  displayedColumns = ["seqNo", "description", "count", "price"];
 
   constructor(private configService: ConfigService) {}
 

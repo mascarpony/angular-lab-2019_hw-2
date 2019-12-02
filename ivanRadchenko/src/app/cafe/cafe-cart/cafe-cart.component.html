@@ -1,19 +1,24 @@
 <mat-table class="lessons-table mat-elevation-z8" [dataSource]="dataSource">
   <ng-container matColumnDef="seqNo">
-    <div *matHeaderCellDef>#</div>
-    <div *matCellDef="let legend">{{ legend.name }}</div>
+    <mat-header-cell *matHeaderCellDef>#</mat-header-cell>
+    <mat-cell *matCellDef="let legend">{{ legend.name }}</mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="description">
-    <div *matHeaderCellDef>Description</div>
-    <div class="description-cell" *matCellDef="let legend">
-      {{ legend.count }}
-    </div>
+    <mat-header-cell *matHeaderCellDef>Description</mat-header-cell>
+    <mat-cell *matCellDef="let legend">
+      {{ legend.title }}
+    </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="count">
-    <div *matHeaderCellDef>Count</div>
-    <div class="duration-cell" *matCellDef="let legend">{{ legend.count }}</div>
+    <mat-header-cell *matHeaderCellDef>Count</mat-header-cell>
+    <mat-cell *matCellDef="let legend">{{ legend.count }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="price">
+    <mat-header-cell *matHeaderCellDef>Price</mat-header-cell>
+    <mat-cell *matCellDef="let legend">{{ legend.price | currency }}</mat-cell>
   </ng-container>
 
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

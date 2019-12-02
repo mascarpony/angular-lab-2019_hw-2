@@ -16,7 +16,7 @@ export class CafeItemComponent implements OnInit {
 
   public imgStyle;
   public counter = 0;
-  public price = Math.floor(1 + Math.random() * 10);
+  public price: number;
   public id: string;
   public title: string;
   public description: string;
@@ -32,6 +32,7 @@ export class CafeItemComponent implements OnInit {
     this.id = legend.id;
     this.title = legend.title;
     this.description = legend.blurb;
+    this.price = legend.price;
     this.imgUrl = legend.imgUrl;
     this.imgStyle = {
       background: "url(" + this.imgUrl + ") no-repeat",

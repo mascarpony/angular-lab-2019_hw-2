@@ -3,4 +3,5 @@ export interface Legend {
   title: string;
   blurb: string;
   imgUrl?: string;
+  price?: number;
 }
