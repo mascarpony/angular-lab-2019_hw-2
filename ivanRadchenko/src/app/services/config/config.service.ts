@@ -5,26 +5,25 @@ import { Champion } from "src/app/interfaces/champions";
 import { Observable, BehaviorSubject, of } from "rxjs";
 import { Legend } from "src/app/interfaces/legend";
 import { LegendCart } from "src/app/interfaces/legendCart";
-import { totalmem } from "os";
 
 @Injectable({ providedIn: "root" })
 export class ConfigService {
   configUrl = "../../assets/champion.json";
 
-  private legendsDataSource: Observable<
-    Observable<Legend>[]
-  > = this.fetchLegends();
-  public legends$ = this.legendsDataSource;
+  private legendsSouce$: Observable<Observable<Legend>[]>;
+  public legends$: BehaviorSubject<any> = new BehaviorSubject([]);
 
   private cart: BehaviorSubject<LegendCart[]> = new BehaviorSubject<
-    LegendCart[]
+  LegendCart[]
   >([]);
   public cart$ = this.cart.asObservable();
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    this.fetchLegends();
+  }
 
-  private fetchLegends(): Observable<Observable<Legend>[]> {
-    return this.http.get(this.configUrl).pipe(
+  private fetchLegends(): void {
+    this.http.get(this.configUrl).pipe(
       map((data: Champion) => {
         return Object.values(data.data);
       }),
@@ -35,7 +34,7 @@ export class ConfigService {
           return of(legend);
         })
       )
-    );
+    ).subscribe(legends => this.legends$.next(legends));
   }
 
   private setImgUrl(legend: Legend) {
