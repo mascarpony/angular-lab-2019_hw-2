@@ -5,6 +5,7 @@ export interface Product {
   available_quantity: number,
   description?: string,
   img: string,
+  quantity_in_cart: number,
 }
 
 export const PRODUCTS: Array<Product> = [
@@ -14,7 +15,8 @@ export const PRODUCTS: Array<Product> = [
     price: 100, 
     available_quantity: 10, 
     description: "", 
-    img: 'fresh_salad.jpg' 
+    img: 'fresh_salad.jpg',
+    quantity_in_cart: 0,
   },
   { 
     id: 2, 
@@ -22,21 +24,24 @@ export const PRODUCTS: Array<Product> = [
     price: 80, 
     available_quantity: 19, 
     description: "", 
-    img: 'carrot_sticks.jpg' 
+    img: 'carrot_sticks.jpg',
+    quantity_in_cart: 0,
   },
   { id: 3, 
     name: 'Celery juice', 
     price: 130, 
     available_quantity: 20, 
     description: "", 
-    img: 'celery_juice.jpg' 
+    img: 'celery_juice.jpg',
+    quantity_in_cart: 0,
   },
   { id: 4, 
     name: 'Freshburger', 
     price: 200, 
     available_quantity: 16, 
     description: "", 
-    img: 'freshburger.jpg' 
+    img: 'freshburger.jpg',
+    quantity_in_cart: 0,
   },
   { 
     id: 5, 
@@ -44,7 +49,8 @@ export const PRODUCTS: Array<Product> = [
     price: 150, 
     available_quantity: 9, 
     description: "", 
-    img: 'tomato_chips.jpg' 
+    img: 'tomato_chips.jpg',
+    quantity_in_cart: 0,
   },
   { 
     id: 6, 
@@ -52,7 +58,8 @@ export const PRODUCTS: Array<Product> = [
     price: 300, 
     available_quantity: 29, 
     description: "", 
-    img: 'royal_apples.jpg' 
+    img: 'royal_apples.jpg',
+    quantity_in_cart: 0,
   },
   { 
     id: 7, 
@@ -60,7 +67,8 @@ export const PRODUCTS: Array<Product> = [
     price: 500, 
     available_quantity: 23, 
     description: "", 
-    img: 'nuts_mix.jpg' 
+    img: 'nuts_mix.jpg',
+    quantity_in_cart: 0,
   },
   { 
     id: 8, 
@@ -68,7 +76,8 @@ export const PRODUCTS: Array<Product> = [
     price: 330, 
     available_quantity: 11, 
     description: "", 
-    img: 'dried_seaweed.jpg' 
+    img: 'dried_seaweed.jpg',
+    quantity_in_cart: 0,
   },
   { 
     id: 9, 
@@ -76,7 +85,8 @@ export const PRODUCTS: Array<Product> = [
     price: 450, 
     available_quantity: 15, 
     description: "", 
-    img: 'golden_mango.jpg' 
+    img: 'golden_mango.jpg',
+    quantity_in_cart: 0,
   },
   { 
     id: 10, 
@@ -84,7 +94,8 @@ export const PRODUCTS: Array<Product> = [
     price: 260, 
     available_quantity: 7, 
     description: "", 
-    img: 'spring_roll.jpg' 
+    img: 'spring_roll.jpg',
+    quantity_in_cart: 0,
   }
 ];
 

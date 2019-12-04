@@ -37,6 +37,7 @@ export class ProductCardComponent implements OnInit {
   addToCart() {
     if(this.product.available_quantity) {
       this.product.available_quantity -= this.productCount;
+      this.product.quantity_in_cart += this.productCount;
       this.productCount = 0;
     }
 

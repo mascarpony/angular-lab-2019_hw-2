@@ -1,5 +1,4 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
@@ -13,10 +12,9 @@ export class ProductListComponent implements OnInit {
   @Input() products;
   @Output() pushProduct = new EventEmitter();
 
-  constructor(private router: Router) { }
+  constructor() { }
 
   ngOnInit() {
-    this.pageURL = this.router.url;
   }
 
   onPushProduct(product): void {

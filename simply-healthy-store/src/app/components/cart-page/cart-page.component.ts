@@ -19,4 +19,9 @@ export class CartPageComponent implements OnInit {
   getCartProducts(): void {
     this.cartProducts = this.productService.getCartProducts();
   }
+
+  onDeleteProduct(product): void {
+    this.cartProducts = this.productService.deleteProductFromCart(product.id);
+    console.log(this.cartProducts);
+  }
 }

@@ -21,4 +21,9 @@ export class ProductsService {
   pushProductToCart(product: Product) {
     CARTPRODUCTS.push(product);
   }
+
+  deleteProductFromCart(id) {
+    CARTPRODUCTS.filter(element => element.id === id);
+    this.getCartProducts();
+  }
 }
