@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
-import { HighlightCardBorderDirective } from './../../directives/highlight-card-border.directive';
+import { HighlightCardBorderDirective } from '../../../directives/highlight-card-border.directive';
 import { EventEmitter } from '@angular/core';
 
 @Component({
@@ -10,7 +10,7 @@ import { EventEmitter } from '@angular/core';
 export class ProductCardComponent implements OnInit {
   private productCount: number = 0;
   private isAddButtonDisabled: boolean = false;
-  private isAddToCartButtonDisabled: boolean = false;
+  private isAddToCartButtonDisabled: boolean = true;
 
   @Input() product;
   @Input() pageURL;
@@ -28,6 +28,8 @@ export class ProductCardComponent implements OnInit {
   }
 
   addProducts(quantity) {
+    this.isAddToCartButtonDisabled = false;
+    
     this.productCount = this.productCount + 1;
     if (this.productCount === quantity) {
       this.isAddButtonDisabled = true;
@@ -46,6 +48,7 @@ export class ProductCardComponent implements OnInit {
     }
     
     this.onPushProduct(this.product);
+    this.isAddToCartButtonDisabled = true;
   }
 
   onPushProduct(product) {

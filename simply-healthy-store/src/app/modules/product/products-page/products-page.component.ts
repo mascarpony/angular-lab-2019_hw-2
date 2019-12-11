@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from 'src/app/products.service';
-import { Product } from './../../mock-products';
+import { Product } from '../../../mock-products';
 
 @Component({
   selector: 'app-products-page',
@@ -17,7 +17,8 @@ export class ProductsPageComponent implements OnInit {
   }
 
   getProducts(): void {
-    this.products = this.productService.getProducts();
+    this.productService.getProducts()
+        .subscribe(products => this.products = products);
   }
 
   pushProduct(product): void {

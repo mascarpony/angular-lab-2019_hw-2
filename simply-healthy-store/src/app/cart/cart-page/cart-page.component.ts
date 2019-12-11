@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductsService } from 'src/app/products.service';
-import { Product } from 'src/app/mock-products';
+import { ProductsService } from './src/app/products.service';
+import { Product } from './../src/app/mock-products';
 
 @Component({
   selector: 'app-cart-page',
   templateUrl: './cart-page.component.html',
   styleUrls: ['./cart-page.component.scss']
 })
+
 export class CartPageComponent implements OnInit {
   public cartProducts: Array<Product>;
 
@@ -21,7 +22,6 @@ export class CartPageComponent implements OnInit {
   }
 
   onDeleteProduct(product): void {
-    this.cartProducts = this.productService.deleteProductFromCart(product.id);
-    console.log(this.cartProducts);
+    // this.cartProducts = this.productService.deleteProductFromCart(product.id);
   }
 }
