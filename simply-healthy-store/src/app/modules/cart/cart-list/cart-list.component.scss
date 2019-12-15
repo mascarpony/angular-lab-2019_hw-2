@@ -1,0 +1,15 @@
+.cart-list {
+  display: flex;
+  justify-content: center;
+  table {
+    width: 800px;
+    img {
+      margin: 0;
+      width: 50px;
+    }
+  }
+}
+
+.no-products {
+  text-align: center;
+}
