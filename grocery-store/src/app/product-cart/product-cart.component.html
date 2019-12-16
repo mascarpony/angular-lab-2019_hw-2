@@ -1,0 +1,13 @@
+<div class="container">
+  <h2>just product cart </h2>
+  <div class="group">
+    <div *ngIf="isEmpty else empty">
+      <a *ngFor="let product1 of cartProducts" class="product-unit">
+        <product-card [product]="product1" (valueChange)='displayCounter($event)'></product-card>
+      </a>
+    </div>
+    <ng-template #empty>
+      <ng-content></ng-content>
+    </ng-template>
+  </div>
+</div>
