@@ -1,3 +1,5 @@
-<button (click)="removeProduct()">-</button>
-<button (click)="addProduct()">+</button>
-<h3>{{productCounter}} pieces</h3>
+<div class="counter">
+<button mat-button color="primary" (click)="removeProduct()">-</button>
+{{productCounter}}
+<button mat-button color="primary" (click)="addProduct()">+</button>
+</div>

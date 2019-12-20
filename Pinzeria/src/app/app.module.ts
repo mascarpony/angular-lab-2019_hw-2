@@ -13,7 +13,7 @@ import { ProductCounterComponent } from './product-counter/product-counter.compo
 import { ProductListContainerComponent } from './product-list-container/product-list-container.component';
 import { CartpageComponent } from './cartpage/cartpage.component';
 import { NotfoundComponent } from './notfound/notfound.component';
-
+import {MatButtonModule} from '@angular/material/button';
 
 
 @NgModule({
@@ -32,6 +32,7 @@ import { NotfoundComponent } from './notfound/notfound.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatCardModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
