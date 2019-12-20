@@ -1,0 +1,7 @@
+<ul>
+  <li *ngFor="let product of products" >
+    <app-product-card [product]="product">
+    </app-product-card>
+  </li>
+</ul>
+<ng-content></ng-content>
